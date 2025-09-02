@@ -122,26 +122,50 @@ ex_two_btnAdd.addEventListener('click', function () {
     ex_two_msg.classList = ''; // Reset preventivo delle classi css 
 
 
-    if (isNaN(ex_two_inputNumber)) { // Controllo la validità del dato (se non è un numero eseguo il seguente blocco)
+    let ex_two_flagFound = false; // Varibile flag settata a false 
 
+
+
+    if (isNaN(ex_two_inputNumber)) { // Controllo la validità del dato (se non è un numero eseguo il seguente blocco)
 
         ex_two_msg.innerHTML = 'Prego inserire un dato valido !!'; // Inner del contenuto al messaggo
 
         ex_two_msg.classList.add('txt-red'); // Classi Css
 
-
-    } else { // (altimenti se è un numero eseguo il seguente blocco)
-
-
-        ex_two_ArrayNumbers.push(ex_two_inputNumber); // Aggiungo in coda il valore del campo input
-
-        ex_two_msg.innerHTML = `Il numero ${ex_two_inputNumber} è stato aggiunto correttamente!! Fai click su mostra`; // Inner del contenuto al messaggio
-
-        ex_two_msg.classList.add('txt-green'); // Classi css
-
+        return;
 
     };
 
+    for (let i = 0; i < ex_two_ArrayNumbers.length; i++) { // Scorro tutti gli elementi dell'array numerico
+
+        if (ex_two_ArrayNumbers[i] === ex_two_inputNumber) { // Se trova corrispondeza tra l'elemento i-esimo dell'array e il campo di input
+
+            ex_two_flagFound = true; // Setto la variabile flag a true
+        };
+
+    };
+
+    console.log(ex_two_flagFound);
+
+
+
+    // if () {
+
+
+
+
+
+    // } else { // (altimenti se è un numero eseguo il seguente blocco)
+
+
+    //     ex_two_ArrayNumbers.push(ex_two_inputNumber); // Aggiungo in coda il valore del campo input
+
+    //     ex_two_msg.innerHTML = `Il numero ${ex_two_inputNumber} è stato aggiunto correttamente!! Fai click su mostra`; // Inner del contenuto al messaggio
+
+    //     ex_two_msg.classList.add('txt-green'); // Classi css
+
+
+    // };
 });
 
 
