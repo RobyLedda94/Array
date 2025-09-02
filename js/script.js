@@ -86,9 +86,17 @@ ex_two_showBtn.addEventListener('click', function () {
 
         let ex_two_listItems = document.createElement('li'); // Ogni iterazione crea un elemento lista
 
+
         ex_two_listItems.innerHTML = ex_two_ArrayNumbers[i]; // Inietto come valore ai (li) l'elemento i-esimo dell'array
 
-        console.log(ex_two_listItems);
+
+        ex_two_arrayList.appendChild(ex_two_listItems); // Appendo gli elementi creati alla Ul Html
+
+
+        ex_two_arrayList.classList.add('list-style-none'); // Classi css 
+
+
+        ex_two_listItems.classList.add('p-1', 'bg-cadetblue', 'txt-white', 'border-white'); // Classi css
 
     };
 
