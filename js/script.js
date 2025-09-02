@@ -55,7 +55,7 @@ console.log(`${max}`); // Srampo in console il valore più grande
 
 const ex_two_ArrayNumbers = [4, 12, 56, 78, 34, 65, 3, 9, 44]; // Definito l'array numerico
 
-console.log(ex_two_ArrayNumbers); // Debugging array
+
 
 const ex_two_btnAdd = document.getElementById('ex_two_btnAdd'); // Bottone Add
 
@@ -82,16 +82,7 @@ let ex_two_maxValue = [0]; // Variabile che tiene traccia del valore massimo del
 
 
 
-// Gestione evento Add
-ex_two_btnAdd.addEventListener('click', function () {
 
-    let ex_two_inputNumber = parseInt(document.getElementById('ex_two_inputNumber').value); // Catturo il valore del campo input
-
-    ex_two_ArrayNumbers.push(ex_two_inputNumber); // Aggiungo in coda il valore del campo input
-
-    console.log(ex_two_ArrayNumbers); // MOstro in console il risultato
-
-});
 
 
 // Gestione evento Show
@@ -122,6 +113,17 @@ ex_two_showBtn.addEventListener('click', function () {
 
 });
 
+// Gestione evento Add
+ex_two_btnAdd.addEventListener('click', function () {
+
+    let ex_two_inputNumber = parseInt(document.getElementById('ex_two_inputNumber').value); // Catturo il valore del campo input
+
+    ex_two_ArrayNumbers.push(ex_two_inputNumber); // Aggiungo in coda il valore del campo input
+
+    console.log(ex_two_ArrayNumbers); // MOstro in console il risultato
+
+});
+
 
 
 // Gestione evento MaxValue
@@ -138,10 +140,13 @@ ex_two_maxValueBtn.addEventListener('click', function () {
 
     ex_two_msg.innerHTML = `Il valore massimo trovato è ${ex_two_maxValue}`; // Inietto dinamicamente il contenuto al messaggio
 
+
 });
 // Gestione evento Reset
 ex_two_btnReset.addEventListener('click', function () {
 
-    console.log(this);
+    ex_two_arrayList.innerHTML = '';
+
+    ex_two_msg.innerHTML = '';
 
 });
