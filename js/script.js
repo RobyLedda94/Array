@@ -36,3 +36,7 @@ for (let i = 0; i < numbers_Array.length; i++) { // Definisco un ciclo for per s
 };
 
 console.log(`${max}`); // Srampo in console il valore più grande
+
+
+
+// Esercizio 2 Permetto all'utente di inserire numeri tramite un input, stampo a video i valori aggiornati e mostro il valore piu grande

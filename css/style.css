@@ -12,6 +12,23 @@
 
 /* Utility */
 
+.txt-center {
+    text-align: center;
+}
+
+.style-label {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.list-style-none {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
 
 
 
@@ -24,4 +41,19 @@
 
 .txt-white {
     color: white;
+}
+
+
+/* Media query */
+
+@media screen and (min-width : 576px) {
+
+    .content-header {
+        text-align: left;
+    }
+
+    .content-main {
+        text-align: start;
+    }
+
 }
