@@ -76,19 +76,21 @@ let ex_two_msg = document.getElementById('ex_two_msg'); // Messaggio all'utente
 
 // Debugging 
 
-console.log('Array', ex_two_ArrayNumbers);
-
-
-console.log(ex_two_showBtn, ex_two_btnAdd, ex_two_maxValueBtn, ex_two_btnReset);
-
-
-console.log(ex_two_arrayList, ex_two_msg);
 
 
 // Gestione evento Show
 ex_two_showBtn.addEventListener('click', function () {
 
-    console.log(this);
+    for (let i = 0; i < ex_two_ArrayNumbers.length; i++) { // Ciclo for scorro tutti gli elementi dell'array numerico
+
+
+        let ex_two_listItems = document.createElement('li'); // Ogni iterazione crea un elemento lista
+
+        ex_two_listItems.innerHTML = ex_two_ArrayNumbers[i]; // Inietto come valore ai (li) l'elemento i-esimo dell'array
+
+        console.log(ex_two_listItems);
+
+    };
 
 });
 
