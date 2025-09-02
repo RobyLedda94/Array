@@ -83,3 +83,31 @@ console.log(ex_two_showBtn, ex_two_btnAdd, ex_two_maxValueBtn, ex_two_btnReset);
 
 
 console.log(ex_two_arrayList, ex_two_msg);
+
+
+// Gestione evento Show
+ex_two_showBtn.addEventListener('click', function () {
+
+    console.log(this);
+
+});
+
+// Gestione evento Add
+ex_two_btnAdd.addEventListener('click', function () {
+
+    console.log(this);
+
+});
+
+// Gestione evento MaxValue
+ex_two_maxValueBtn.addEventListener('click', function () {
+
+    console.log(this);
+
+});
+// Gestione evento Reset
+ex_two_btnReset.addEventListener('click', function () {
+
+    console.log(this);
+
+});
