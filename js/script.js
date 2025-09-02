@@ -75,7 +75,7 @@ let ex_two_arrayList = document.getElementById('ex_two_arraylist'); // Ul html
 let ex_two_msg = document.getElementById('ex_two_msg'); // Messaggio all'utente
 
 
-let ex_two_maxValue = ex_two_ArrayNumbers[0]; // Variabile che tiene traccia del valore massimo dell'array
+
 
 
 // Debugging 
@@ -146,36 +146,23 @@ ex_two_btnAdd.addEventListener('click', function () {
     };
 
 
-    if (ex_two_flagFound === true) {
-
-        console.log(`Il valore ${ex_two_inputNumber} è gia presente nella lista !!`);
-
-    } else {
-
-        ex_two_ArrayNumbers.push(ex_two_inputNumber);
-
-        console.log(`Il valore ${ex_two_inputNumber} è stato aggiunto correttamente`);
-    }
+    if (ex_two_flagFound === true) { // Se la variabile flag risulta (true) non aggiungo il valore
 
 
+        ex_two_msg.innerHTML = `Il valore ${ex_two_inputNumber} è gia presente nella lista !!`; // Inner del contenuto al messaggio
 
-    // if () {
-
-
-
+        ex_two_msg.classList.add('txt-red'); // Class List
 
 
-    // } else { // (altimenti se è un numero eseguo il seguente blocco)
+    } else { // Altrimenti non trova corrispondenza (false)
 
+        ex_two_ArrayNumbers.push(ex_two_inputNumber); // Aggiungo in coda il nuovo valore nell'array
 
-    //     ex_two_ArrayNumbers.push(ex_two_inputNumber); // Aggiungo in coda il valore del campo input
+        ex_two_msg.innerHTML = `Il valore ${ex_two_inputNumber} è stato aggiunto correttamente !!`; // Inner del contenuto
 
-    //     ex_two_msg.innerHTML = `Il numero ${ex_two_inputNumber} è stato aggiunto correttamente!! Fai click su mostra`; // Inner del contenuto al messaggio
+        ex_two_msg.classList.add('txt-green'); // Classi css
+    };
 
-    //     ex_two_msg.classList.add('txt-green'); // Classi css
-
-
-    // };
 });
 
 
@@ -184,6 +171,10 @@ ex_two_btnAdd.addEventListener('click', function () {
 ex_two_maxValueBtn.addEventListener('click', function () {
 
     ex_two_msg.classList = ''; // Reset preventivo classi css
+
+
+    let ex_two_maxValue = ex_two_ArrayNumbers[0]; // Variabile che tiene traccia del valore massimo dell'array
+
 
     for (let i = 0; i < ex_two_ArrayNumbers.length; i++) { // Scorro tutti gli elementi dell'array
 
@@ -196,9 +187,34 @@ ex_two_maxValueBtn.addEventListener('click', function () {
 
     };
 
-    ex_two_msg.innerHTML = `Il valore massimo trovato è ${ex_two_maxValue}`; // Inietto dinamicamente il contenuto al messaggio
+    ex_two_msg.innerHTML = `Il valore massimo trovato è ${ex_two_maxValue} !!`; // Inietto dinamicamente il contenuto al messaggio
 
     ex_two_msg.classList.add('txt-green'); // Classi css
+
+
+    let listItems = ex_two_arrayList.getElementsByTagName('li'); // Recupero tutti i list items (restituisce una htmlCollection)
+
+    console.log(listItems);
+
+
+    for (let i = 0; i < listItems.length; i++) {  // Ciclo For per scorrere gli elementi della HTMLCollection
+
+
+        let item_value = parseInt(listItems[i].textContent); // Assegno un valore numerico ai listItems
+
+
+        if (item_value === ex_two_maxValue) { // confronto il valore dei list items attualmente iterato con il valore di max value
+
+
+            listItems[i].classList.add('bg-green'); // Se corrispondono aggiungo la classe css
+
+        } else {
+
+            listItems[i].classList.remove('bg-green'); // Altrimenti la rimuovo
+        }
+
+    };
+
 
 
 });

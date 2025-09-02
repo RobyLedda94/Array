@@ -31,6 +31,10 @@
     border: 1px solid white;
 }
 
+.content-main>.btn {
+    margin: 5px 0px 5px 0px;
+}
+
 
 
 
@@ -40,6 +44,10 @@
 
 .bg-cadetblue {
     background-color: cadetblue;
+}
+
+.bg-green {
+    background-color: green;
 }
 
 
@@ -57,6 +65,15 @@
 
 
 /* Media query */
+
+@media screen and (min-width : 297px) {
+
+    .content-main>.btn {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+}
 
 @media screen and (min-width : 576px) {
 
