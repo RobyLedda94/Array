@@ -75,7 +75,7 @@ let ex_two_arrayList = document.getElementById('ex_two_arraylist'); // Ul html
 let ex_two_msg = document.getElementById('ex_two_msg'); // Messaggio all'utente
 
 
-let ex_two_maxValue = [0]; // Variabile che tiene traccia del valore massimo dell'array
+let ex_two_maxValue = ex_two_ArrayNumbers[0]; // Variabile che tiene traccia del valore massimo dell'array
 
 
 // Debugging 
@@ -118,9 +118,29 @@ ex_two_btnAdd.addEventListener('click', function () {
 
     let ex_two_inputNumber = parseInt(document.getElementById('ex_two_inputNumber').value); // Catturo il valore del campo input
 
-    ex_two_ArrayNumbers.push(ex_two_inputNumber); // Aggiungo in coda il valore del campo input
 
-    console.log(ex_two_ArrayNumbers); // MOstro in console il risultato
+    ex_two_msg.classList = ''; // Reset preventivo delle classi css 
+
+
+    if (isNaN(ex_two_inputNumber)) { // Controllo la validità del dato (se non è un numero eseguo il seguente blocco)
+
+
+        ex_two_msg.innerHTML = 'Prego inserire un dato valido !!'; // Inner del contenuto al messaggo
+
+        ex_two_msg.classList.add('txt-red'); // Classi Css
+
+
+    } else { // (altimenti se è un numero eseguo il seguente blocco)
+
+
+        ex_two_ArrayNumbers.push(ex_two_inputNumber); // Aggiungo in coda il valore del campo input
+
+        ex_two_msg.innerHTML = `Il numero ${ex_two_inputNumber} è stato aggiunto correttamente!! Fai click su mostra`; // Inner del contenuto al messaggio
+
+        ex_two_msg.classList.add('txt-green'); // Classi css
+
+
+    };
 
 });
 
@@ -129,24 +149,36 @@ ex_two_btnAdd.addEventListener('click', function () {
 // Gestione evento MaxValue
 ex_two_maxValueBtn.addEventListener('click', function () {
 
+    ex_two_msg.classList = ''; // Reset preventivo classi css
+
     for (let i = 0; i < ex_two_ArrayNumbers.length; i++) { // Scorro tutti gli elementi dell'array
 
         if (ex_two_ArrayNumbers[i] > ex_two_maxValue) {  // Condizione dove indico se l'elemento corrente è maggiore del valore iniziale di maxValue
 
             ex_two_maxValue = ex_two_ArrayNumbers[i]; // se risulta vero assegno il nuovo valore alla variabile maxValue
+
+
         };
 
     };
 
     ex_two_msg.innerHTML = `Il valore massimo trovato è ${ex_two_maxValue}`; // Inietto dinamicamente il contenuto al messaggio
 
+    ex_two_msg.classList.add('txt-green'); // Classi css
+
 
 });
+
+
 // Gestione evento Reset
 ex_two_btnReset.addEventListener('click', function () {
 
-    ex_two_arrayList.innerHTML = '';
+    ex_two_arrayList.innerHTML = ''; // Svuoto il contenuto della lista
 
-    ex_two_msg.innerHTML = '';
+    document.getElementById('ex_two_inputNumber').value = ''; // Svuoto il valore del campo input
+
+    ex_two_msg.innerHTML = ''; // Svuoto il contenuto del messaggio
+
+    ex_two_msg.classList = ''; // Reset classi css
 
 });
