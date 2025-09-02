@@ -55,6 +55,8 @@ console.log(`${max}`); // Srampo in console il valore più grande
 
 const ex_two_ArrayNumbers = [4, 12, 56, 78, 34, 65, 3, 9, 44]; // Definito l'array numerico
 
+console.log(ex_two_ArrayNumbers); // Debugging array
+
 const ex_two_btnAdd = document.getElementById('ex_two_btnAdd'); // Bottone Add
 
 
@@ -71,6 +73,9 @@ let ex_two_arrayList = document.getElementById('ex_two_arraylist'); // Ul html
 
 
 let ex_two_msg = document.getElementById('ex_two_msg'); // Messaggio all'utente
+
+
+let ex_two_maxValue = [0]; // Variabile che tiene traccia del valore massimo dell'array
 
 
 // Debugging 
@@ -122,7 +127,16 @@ ex_two_showBtn.addEventListener('click', function () {
 // Gestione evento MaxValue
 ex_two_maxValueBtn.addEventListener('click', function () {
 
-    console.log(this);
+    for (let i = 0; i < ex_two_ArrayNumbers.length; i++) { // Scorro tutti gli elementi dell'array
+
+        if (ex_two_ArrayNumbers[i] > ex_two_maxValue) {  // Condizione dove indico se l'elemento corrente è maggiore del valore iniziale di maxValue
+
+            ex_two_maxValue = ex_two_ArrayNumbers[i]; // se risulta vero assegno il nuovo valore alla variabile maxValue
+        };
+
+    };
+
+    ex_two_msg.innerHTML = `Il valore massimo trovato è ${ex_two_maxValue}`; // Inietto dinamicamente il contenuto al messaggio
 
 });
 // Gestione evento Reset
