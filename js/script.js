@@ -145,7 +145,17 @@ ex_two_btnAdd.addEventListener('click', function () {
 
     };
 
-    console.log(ex_two_flagFound);
+
+    if (ex_two_flagFound === true) {
+
+        console.log(`Il valore ${ex_two_inputNumber} è gia presente nella lista !!`);
+
+    } else {
+
+        ex_two_ArrayNumbers.push(ex_two_inputNumber);
+
+        console.log(`Il valore ${ex_two_inputNumber} è stato aggiunto correttamente`);
+    }
 
 
 
