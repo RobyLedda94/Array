@@ -279,16 +279,46 @@ let ex_three_msg = document.getElementById('ex_three_msg'); // Messaggio all'ute
 
 // Debugging
 
-console.log();
 
-console.log();
 
 
 // Gestione evento Add
 
 ex_three_btnAdd.addEventListener('click', function () {
 
+    let ex_three_inputName = document.getElementById('ex_three_inputName').value; // Recupero l'input e catturo il valore
+    console.log(ex_three_inputName);
+
+    let ex_three_selectAge = document.getElementById('ex_three_selectAge').value; // Recupero la select e catturo il valore
+    console.log(ex_three_selectAge);
+
+    if (ex_three_inputName === '' && ex_three_selectAge === '0') { // Condizione di controllo sul dato
+
+        console.log('Prego inserire un dato valido !!');
+
+    } else if (ex_three_selectAge === '1') { // Condizione agginta (array) dei minorenni
+
+        ex_three_adultsArray.push(ex_three_inputName + ' : ' + 'Maggiorenne');
+
+    } else if (ex_three_selectAge === '2') { // Condizione aggiunta (array) dei maggiorenni
+
+        ex_three_minorsArray.push(ex_three_inputName + ' : ' + 'Minorenne');
+
+    } else if (ex_three_selectAge === '3') { // Condizione aggiunta (array) over65
+
+        ex_three_overArray.push(ex_three_inputName + ' : ' + 'Over65');
+
+    };
+
+    console.log('Maggiorenni :', ex_three_adultsArray);
+
+    console.log('Minorenni :', ex_three_minorsArray);
+
+    console.log('Over65 :', ex_three_overArray);
+
 });
+
+
 
 
 // Gestione evento show
