@@ -451,7 +451,7 @@ ex_three_btnReset.addEventListener('click', function () {
 
     document.getElementById('ex_three_inputName').value = '';
 
-    document.getElementById('ex_three_selectAge').value = '';
+    document.getElementById('ex_three_selectAge').value = '0';
 
 
     // Svuoto il contenuto del messaggio e resetto le classi di stile
