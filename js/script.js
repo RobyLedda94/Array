@@ -3,7 +3,7 @@
 const numbers_Array = [5, 12, 8, 21, 7];
 
 
-console.log(`Array numerico :`, numbers_Array); // Stampo l'array in console
+console.log('Array numerico :', numbers_Array); // Stampo l'array in console
 
 
 // Somma degli elementi
@@ -56,11 +56,10 @@ console.log(`${max}`); // Srampo in console il valore più grande
 const ex_two_ArrayNumbers = [4, 12, 56, 78, 34, 65, 3, 9, 44]; // Definito l'array numerico
 
 
+const ex_two_showBtn = document.getElementById('ex_two_btnShow'); // Bottone Show
+
 
 const ex_two_btnAdd = document.getElementById('ex_two_btnAdd'); // Bottone Add
-
-
-const ex_two_showBtn = document.getElementById('ex_two_btnShow'); // Bottone Show
 
 
 const ex_two_maxValueBtn = document.getElementById('ex_two_btnMaxValue'); // Bottone Max value
@@ -136,6 +135,7 @@ ex_two_btnAdd.addEventListener('click', function () {
 
     };
 
+
     for (let i = 0; i < ex_two_ArrayNumbers.length; i++) { // Scorro tutti gli elementi dell'array numerico
 
         if (ex_two_ArrayNumbers[i] === ex_two_inputNumber) { // Se trova corrispondeza tra l'elemento i-esimo dell'array e il campo di input
@@ -194,13 +194,17 @@ ex_two_maxValueBtn.addEventListener('click', function () {
 
     let listItems = ex_two_arrayList.getElementsByTagName('li'); // Recupero tutti i list items (restituisce una htmlCollection)
 
-    console.log(listItems);
+
+
 
 
     for (let i = 0; i < listItems.length; i++) {  // Ciclo For per scorrere gli elementi della HTMLCollection
 
 
-        let item_value = parseInt(listItems[i].textContent); // Assegno un valore numerico ai listItems
+
+        let item_value = parseInt(listItems[i].textContent); // 
+
+
 
 
         if (item_value === ex_two_maxValue) { // confronto il valore dei list items attualmente iterato con il valore di max value

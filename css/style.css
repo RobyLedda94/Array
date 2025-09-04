@@ -17,7 +17,9 @@
 }
 
 .style-label {
+    width: 70px;
     padding: 5px;
+    text-align: center;
     border-radius: 5px;
 }
 
@@ -29,6 +31,10 @@
 
 .border-white {
     border: 1px solid white;
+}
+
+.content-main {
+    padding: 10px 0 10px 0;
 }
 
 .content-main>.btn {
