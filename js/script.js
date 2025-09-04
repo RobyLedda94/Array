@@ -292,21 +292,40 @@ ex_three_btnAdd.addEventListener('click', function () {
     let ex_three_selectAge = document.getElementById('ex_three_selectAge').value; // Recupero la select e catturo il valore
 
 
+    ex_three_msg.classList = ''; // Reset preventivo delle classi
+
+
     if (ex_three_inputName === '' || ex_three_selectAge === '0') { // Condizione di controllo sul dato
 
-        console.log('Prego inserire un dato valido !!');
+        ex_three_msg.innerHTML = 'Prego inserire un dato valido !!'; // Inner del contenuto
+
+        ex_three_msg.classList.add('txt-red'); // classi css
+
+
 
     } else if (ex_three_selectAge === '1') { // Condizione agginta (array) dei minorenni
 
-        ex_three_adultsArray.push(`${ex_three_inputName} : Maggiorenne`);
+        ex_three_adultsArray.push(`${ex_three_inputName} : Maggiorenne`); // Aggiungo in coda (adultsArray)
+
+        ex_three_msg.innerHTML = 'Lista Maggiorenni aggiornata premi su mostra !!'; // Inner del contenuto
+
+        ex_three_msg.classList.add('txt-green'); // Classi css
 
     } else if (ex_three_selectAge === '2') { // Condizione aggiunta (array) dei maggiorenni
 
-        ex_three_minorsArray.push(`${ex_three_inputName} : Minorenne`);
+        ex_three_minorsArray.push(`${ex_three_inputName} : Minorenne`); // Aggiungo in coda (minorsArray)
+
+        ex_three_msg.innerHTML = 'Lista Minorenni aggiornata premi su mostra !!'; // Inner del contenuto
+
+        ex_three_msg.classList.add('txt-green'); // Classi css
 
     } else if (ex_three_selectAge === '3') { // Condizione aggiunta (array) over65
 
-        ex_three_overArray.push(`${ex_three_inputName} : Over65`);
+        ex_three_overArray.push(`${ex_three_inputName} : Over65`); // Aggiungo in coda (over65Array)
+
+        ex_three_msg.innerHTML = 'Lista Over65 aggiornata premi su mostra !!'; // Inietto il contenuto
+
+        ex_three_msg.classList.add('txt-green'); // Classi css
 
     };
 
@@ -319,29 +338,86 @@ ex_three_btnAdd.addEventListener('click', function () {
 
 ex_three_btnShow.addEventListener('click', function () {
 
-    if (ex_three_adultsArray.length === 0 && ex_three_minorsArray.length === 0 && ex_three_overArray.length === 0) {
+    ex_three_msg.innerHTML = ''; // Reset preventivo contenuto del messaggio
 
-        console.log('Al momento le liste sono vuote !!');
+
+    if (ex_three_adultsArray.length === 0 && ex_three_minorsArray.length === 0 && ex_three_overArray.length === 0) { // Condizione di controllo lunchezze array
+
+
+        ex_three_msg.innerHTML = 'Al momento le liste sono vuote !!'; // Inietto il contenuto al messaggio
+
+        ex_three_msg.classList.add('txt-red'); // classi css
 
 
     } else {
 
+
+        ex_three_adultsUl.innerHTML = ''; // Reset preventivo contenuto (AdultsUl)
+
+
         for (let i = 0; i < ex_three_adultsArray.length; i++) { //  Ciclo for (adults Array)
 
-            console.log(`${[i + 1]} ${ex_three_adultsArray[i]}`);
+
+            let ex_three_li_AdultsUl = document.createElement('li'); // Creazione (li)
+
+
+            ex_three_li_AdultsUl.innerHTML = `${[i + 1]} ${ex_three_adultsArray[i]}`; // inietto il contenuto
+
+
+            ex_three_adultsUl.appendChild(ex_three_li_AdultsUl); // Appendo i list items alla lista padre
+
+
+            ex_three_adultsUl.classList.add('list-style-none'); // Classi css
+
+
+            ex_three_li_AdultsUl.classList.add('p-1', 'bg-cadetblue', 'txt-white', 'border-white'); // Classi css
 
         };
+
+
+        ex_three_minorsUl.innerHTML = ''; // Reset preventivo contenuto (minorsUl)
 
 
         for (let i = 0; i < ex_three_minorsArray.length; i++) { // Ciclo for (minors Array)
 
-            console.log(`${[i + 1]} ${ex_three_minorsArray[i]}`);
+
+            let ex_three_li_MinorsUl = document.createElement('li'); // Creazione (li)
+
+
+            ex_three_li_MinorsUl.innerHTML = `${[i + 1]} ${ex_three_minorsArray[i]}`; // inietto il contenuto
+
+
+            ex_three_minorsUl.appendChild(ex_three_li_MinorsUl); // Appendo i list items alla lista padre
+
+
+            ex_three_minorsUl.classList.add('list-style-none'); // Classi css
+
+
+            ex_three_li_MinorsUl.classList.add('p-1', 'bg-cadetblue', 'txt-white', 'border-white'); // Classi css
+
+
         };
+
+
+        ex_three_overUl.innerHTML = ''; // Reset preventivo contenuto (overUl)
 
 
         for (let i = 0; i < ex_three_overArray.length; i++) { // Ciclo for (over65 Array)
 
-            console.log(`${[i + 1]} ${ex_three_overArray[i]}`);
+            let ex_three_li_OverUl = document.createElement('li'); // Creazione (li)
+
+
+            ex_three_li_OverUl.innerHTML = `${[i + 1]} ${ex_three_overArray[i]}`; // inietto il contenuto
+
+
+            ex_three_overUl.appendChild(ex_three_li_OverUl); // Appendo i list items alla lista padre
+
+
+            ex_three_overUl.classList.add('list-style-none'); // Classi css
+
+
+            ex_three_li_OverUl.classList.add('p-1', 'bg-cadetblue', 'txt-white', 'border-white'); // Classi css
+
 
         };
     };
@@ -352,5 +428,7 @@ ex_three_btnShow.addEventListener('click', function () {
 // Gestione evento reset
 
 ex_three_btnReset.addEventListener('click', function () {
+
+
 
 });
