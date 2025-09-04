@@ -319,24 +319,31 @@ ex_three_btnAdd.addEventListener('click', function () {
 
 ex_three_btnShow.addEventListener('click', function () {
 
+    if (ex_three_adultsArray.length === 0 && ex_three_minorsArray.length === 0 && ex_three_overArray.length === 0) {
 
-    for (let i = 0; i < ex_three_adultsArray.length; i++) { //  Ciclo for (adults Array)
-
-        console.log(`${[i + 1]} ${ex_three_adultsArray[i]}`);
-
-    };
+        console.log('Al momento le liste sono vuote !!');
 
 
-    for (let i = 0; i < ex_three_minorsArray.length; i++) { // Ciclo for (minors Array)
+    } else {
 
-        console.log(`${[i + 1]} ${ex_three_minorsArray[i]}`);
-    };
+        for (let i = 0; i < ex_three_adultsArray.length; i++) { //  Ciclo for (adults Array)
+
+            console.log(`${[i + 1]} ${ex_three_adultsArray[i]}`);
+
+        };
 
 
-    for (let i = 0; i < ex_three_overArray.length; i++) { // Ciclo for (over65 Array)
+        for (let i = 0; i < ex_three_minorsArray.length; i++) { // Ciclo for (minors Array)
 
-        console.log(`${[i + 1]} ${ex_three_overArray[i]}`);
+            console.log(`${[i + 1]} ${ex_three_minorsArray[i]}`);
+        };
 
+
+        for (let i = 0; i < ex_three_overArray.length; i++) { // Ciclo for (over65 Array)
+
+            console.log(`${[i + 1]} ${ex_three_overArray[i]}`);
+
+        };
     };
 
 });
