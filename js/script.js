@@ -246,10 +246,10 @@ ex_two_btnReset.addEventListener('click', function () {
 
 // Elementi di interazione
 
-const ex_three_btnShow = document.getElementById('ex_three_btnShow'); // Bottone show
-
-
 const ex_three_btnAdd = document.getElementById('ex_three_btnAdd'); // Bottone Add
+
+
+const ex_three_btnShow = document.getElementById('ex_three_btnShow'); // Bottone show
 
 
 const ex_three_btnReset = document.getElementById('ex_three_btnReset'); // Bottone Reset
@@ -271,6 +271,27 @@ let ex_three_msg = document.getElementById('ex_three_msg'); // Messaggio all'ute
 
 // Debugging
 
-console.log(ex_three_btnShow, ex_three_btnAdd, ex_three_btnReset);
+console.log();
 
-console.log(ex_three_adultsUl, ex_three_minorsUl, ex_three_overUl, ex_three_msg);
+console.log();
+
+
+// Gestione evento Add
+
+ex_three_btnAdd.addEventListener('click', function () {
+    console.log(this);
+});
+
+
+// Gestione evento show
+
+ex_three_btnShow.addEventListener('click', function () {
+    console.log(this);
+});
+
+
+// Gestione evento reset
+
+ex_three_btnReset.addEventListener('click', function () {
+    console.log(this);
+});
