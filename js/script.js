@@ -236,3 +236,41 @@ ex_two_btnReset.addEventListener('click', function () {
     ex_two_msg.classList = ''; // Reset classi css
 
 });
+
+
+
+// Esercizio 3 In base alla fasci d'età aggiungo in uno specifico array e creo le corrispondenti liste a video
+
+
+// Dichiarazione delle variabili
+
+// Elementi di interazione
+
+const ex_three_btnShow = document.getElementById('ex_three_btnShow'); // Bottone show
+
+
+const ex_three_btnAdd = document.getElementById('ex_three_btnAdd'); // Bottone Add
+
+
+const ex_three_btnReset = document.getElementById('ex_three_btnReset'); // Bottone Reset
+
+
+// Elementi di visualizazzione
+
+let ex_three_adultsUl = document.getElementById('ex_three_adultsUl'); // Lista adulti
+
+
+let ex_three_minorsUl = document.getElementById('ex_three_minorsUl'); // Lista minori
+
+
+let ex_three_overUl = document.getElementById('ex_three_over65Ul'); // Lista over65
+
+
+let ex_three_msg = document.getElementById('ex_three_msg'); // Messaggio all'utente
+
+
+// Debugging
+
+console.log(ex_three_btnShow, ex_three_btnAdd, ex_three_btnReset);
+
+console.log(ex_three_adultsUl, ex_three_minorsUl, ex_three_overUl, ex_three_msg);
