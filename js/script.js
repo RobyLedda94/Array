@@ -244,6 +244,14 @@ ex_two_btnReset.addEventListener('click', function () {
 
 // Dichiarazione delle variabili
 
+// Strutture dati
+
+let ex_three_adultsArray = [];
+
+let ex_three_minorsArray = [];
+
+let ex_three_overArray = [];
+
 // Elementi di interazione
 
 const ex_three_btnAdd = document.getElementById('ex_three_btnAdd'); // Bottone Add
@@ -279,19 +287,19 @@ console.log();
 // Gestione evento Add
 
 ex_three_btnAdd.addEventListener('click', function () {
-    console.log(this);
+
 });
 
 
 // Gestione evento show
 
 ex_three_btnShow.addEventListener('click', function () {
-    console.log(this);
+
 });
 
 
 // Gestione evento reset
 
 ex_three_btnReset.addEventListener('click', function () {
-    console.log(this);
+
 });
