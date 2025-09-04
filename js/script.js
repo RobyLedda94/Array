@@ -429,6 +429,35 @@ ex_three_btnShow.addEventListener('click', function () {
 
 ex_three_btnReset.addEventListener('click', function () {
 
+    // Svuoto il contenuto degli array
 
+    ex_three_adultsArray = [];
+
+    ex_three_minorsArray = [];
+
+    ex_three_overArray = [];
+
+
+    // Svuoto il contenuto delle liste
+
+    ex_three_adultsUl.innerHTML = '';
+
+    ex_three_minorsUl.innerHTML = '';
+
+    ex_three_overUl.innerHTML = '';
+
+
+    // Resetto i campi di input
+
+    document.getElementById('ex_three_inputName').value = '';
+
+    document.getElementById('ex_three_selectAge').value = '';
+
+
+    // Svuoto il contenuto del messaggio e resetto le classi di stile
+
+    ex_three_msg.innerHTML = '';
+
+    ex_three_msg.classList = '';
 
 });
