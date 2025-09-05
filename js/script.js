@@ -246,11 +246,13 @@ ex_two_btnReset.addEventListener('click', function () {
 
 // Strutture dati
 
+
 let ex_three_adultsArray = [];
 
 let ex_three_minorsArray = [];
 
 let ex_three_overArray = [];
+
 
 // Elementi di interazione
 
@@ -260,18 +262,26 @@ const ex_three_btnAdd = document.getElementById('ex_three_btnAdd'); // Bottone A
 const ex_three_btnShow = document.getElementById('ex_three_btnShow'); // Bottone show
 
 
-const ex_three_btnReset = document.getElementById('ex_three_btnReset'); // Bottone Reset
+const ex_three_btnReset = document.getElementById('ex_three_btnReset'); // Bottone reset
 
 
 // Elementi di visualizazzione
 
-let ex_three_adultsUl = document.getElementById('ex_three_adultsUl'); // Lista adulti
+
+let ex_three_adultsContainer = document.getElementById('ex_three_adultsContainer'); // Contenitore adulti
+
+let ex_three_adultsContent = ''; // Variabile conenuto (vuoto)
 
 
-let ex_three_minorsUl = document.getElementById('ex_three_minorsUl'); // Lista minori
+
+let ex_three_minorsContainer = document.getElementById('ex_three_minorsContainer'); // Contenitore minori
+
+let ex_three_minorsContent = ''; // Variabile contenuto (vuoto)
 
 
-let ex_three_overUl = document.getElementById('ex_three_over65Ul'); // Lista over65
+let ex_three_overContainer = document.getElementById('ex_three_overContainer'); // Contenitore over65
+
+let ex_three_overContent = ''; // Variabile contenuto (vuoto)
 
 
 let ex_three_msg = document.getElementById('ex_three_msg'); // Messaggio all'utente
@@ -352,74 +362,64 @@ ex_three_btnShow.addEventListener('click', function () {
     } else {
 
 
-        ex_three_adultsUl.innerHTML = ''; // Reset preventivo contenuto (AdultsUl)
+        ex_three_adultsContainer.innerHTML = ''; // Reset Preventivo al contenitore
 
+        ex_three_adultsContent = `<h3>Maggiorenni</h3>`; // Reset al contenuto (sto resettando una stringa non utilizzo innerHTML)
 
         for (let i = 0; i < ex_three_adultsArray.length; i++) { //  Ciclo for (adults Array)
 
-
-            let ex_three_li_AdultsUl = document.createElement('li'); // Creazione (li)
-
-
-            ex_three_li_AdultsUl.innerHTML = `${[i + 1]} ${ex_three_adultsArray[i]}`; // inietto il contenuto
-
-
-            ex_three_adultsUl.appendChild(ex_three_li_AdultsUl); // Appendo i list items alla lista padre
-
-
-            ex_three_adultsUl.classList.add('list-style-none'); // Classi css
-
-
-            ex_three_li_AdultsUl.classList.add('p-1', 'bg-cadetblue', 'txt-white', 'border-white'); // Classi css
+            // Creazione dinamica struttura Html 
+            ex_three_adultsContent += ` 
+                        <ul class = 'list-style-none'>
+                            <li class= ' p-1 bg-cadetblue txt-white border-white'>${i + 1} ${ex_three_adultsArray[i]}</li>
+                        </ul> 
+            `
 
         };
 
+        ex_three_adultsContainer.innerHTML += ex_three_adultsContent; // Concateno i valori delle variabili (Contenitore += Contenuto)
 
-        ex_three_minorsUl.innerHTML = ''; // Reset preventivo contenuto (minorsUl)
 
+
+
+        ex_three_minorsContainer.innerHTML = ''; // Reset al contenutore
+
+        ex_three_minorsContent = `<h3>Minorenni</h3>`; // Reset al contenuto
 
         for (let i = 0; i < ex_three_minorsArray.length; i++) { // Ciclo for (minors Array)
 
-
-            let ex_three_li_MinorsUl = document.createElement('li'); // Creazione (li)
-
-
-            ex_three_li_MinorsUl.innerHTML = `${[i + 1]} ${ex_three_minorsArray[i]}`; // inietto il contenuto
-
-
-            ex_three_minorsUl.appendChild(ex_three_li_MinorsUl); // Appendo i list items alla lista padre
-
-
-            ex_three_minorsUl.classList.add('list-style-none'); // Classi css
-
-
-            ex_three_li_MinorsUl.classList.add('p-1', 'bg-cadetblue', 'txt-white', 'border-white'); // Classi css
+            // Creazione dinamica struttura Html 
+            ex_three_minorsContent += `
+                        <ul class = 'list-style-none'>
+                            <li class= ' p-1 bg-cadetblue txt-white border-white'>${i + 1} ${ex_three_minorsArray[i]}</li>
+                        </ul> 
+            `
 
 
         };
 
+        ex_three_minorsContainer.innerHTML += ex_three_minorsContent; // Concateno i valori delle variabili (Contenitore += Contenuto)
 
-        ex_three_overUl.innerHTML = ''; // Reset preventivo contenuto (overUl)
 
+
+
+        ex_three_overContainer.innerHTML = '' // Reset al contenitore
+
+        ex_three_overContent = `<h3>Over65</h3>`; // Reset al contenuto
 
         for (let i = 0; i < ex_three_overArray.length; i++) { // Ciclo for (over65 Array)
 
-            let ex_three_li_OverUl = document.createElement('li'); // Creazione (li)
-
-
-            ex_three_li_OverUl.innerHTML = `${[i + 1]} ${ex_three_overArray[i]}`; // inietto il contenuto
-
-
-            ex_three_overUl.appendChild(ex_three_li_OverUl); // Appendo i list items alla lista padre
-
-
-            ex_three_overUl.classList.add('list-style-none'); // Classi css
-
-
-            ex_three_li_OverUl.classList.add('p-1', 'bg-cadetblue', 'txt-white', 'border-white'); // Classi css
-
+            // Creazione dinamica struttura Html 
+            ex_three_overContent += `
+                        <ul class = 'list-style-none'>
+                            <li class= ' p-1 bg-cadetblue txt-white border-white'>${i + 1} ${ex_three_overArray[i]}</li>
+                        </ul> 
+            `
 
         };
+
+        ex_three_overContainer.innerHTML += ex_three_overContent; // Concateno i valori delle variabili (Contenitore += Contenuto)
+
     };
 
 });
@@ -438,13 +438,15 @@ ex_three_btnReset.addEventListener('click', function () {
     ex_three_overArray = [];
 
 
-    // Svuoto il contenuto delle liste
 
-    ex_three_adultsUl.innerHTML = '';
+    // Svuoto i contenitori
 
-    ex_three_minorsUl.innerHTML = '';
+    ex_three_adultsContainer.innerHTML = '';
 
-    ex_three_overUl.innerHTML = '';
+    ex_three_minorsContainer.innerHTML = '';
+
+    ex_three_overContainer.innerHTML = '';
+
 
 
     // Resetto i campi di input
