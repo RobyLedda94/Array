@@ -467,3 +467,25 @@ ex_three_btnReset.addEventListener('click', function () {
 // Esercizio 6 sequenza Fibonacci
 
 
+// Dichiarazione delle variabili 
+
+
+// Array fibonacci
+
+let ex_four_FibonacciArray = [0, 1]; // Arrai con due elementi per inziare la sequenza di calcolo
+
+console.log('Array Fib :', ex_four_FibonacciArray);
+
+
+// Elementi di interazione
+
+const ex_four_btnNum = document.getElementById('ex_four_btnNum'); // Bottone per determinare quante iterazioni dovra eseguire il ciclo
+
+const ex_four_btnReset = document.getElementById('ex_four_btnReset'); // Bottone reset
+
+
+// Elementi di visualizazzione
+
+let ex_four_UlFibonacci = document.getElementById('ex_four_UlFibonacci'); // Ul Html
+
+let ex_four_msg = document.getElementById('ex_four_msg'); // Msg Html
