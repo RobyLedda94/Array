@@ -498,9 +498,13 @@ let ex_four_msg = document.getElementById('ex_four_msg'); // Msg Html
 
 ex_four_btnNum.addEventListener('click', function () {
 
-    let ex_four_inputFibonacci = parseInt(document.getElementById('ex_four_FibonacciInput').value, 10);
+    let ex_four_inputFibonacci = parseInt(document.getElementById('ex_four_FibonacciInput').value, 10); // Catturo il valore del campo di input
 
-    console.log(ex_four_inputFibonacci);
+    for (let i = 2; i < ex_four_inputFibonacci; i++) { // Determino con un ciclo for da dove inziare, e quante iterazioni dovranno essere svolte
+
+        console.log(i);
+
+    };
 
 });
 
