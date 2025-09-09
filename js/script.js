@@ -511,11 +511,15 @@ ex_four_btnNum.addEventListener('click', function () {
     console.log(ex_four_FibonacciArray);
 
 
-    for (let i = 0; i < ex_four_FibonacciArray.length; i++) {
+    for (let i = 0; i < ex_four_FibonacciArray.length; i++) { // Ciclo for per iterare gli elementi dell'array
 
-        console.log(ex_four_FibonacciArray[i]);
+        let ex_four_listItemsUl = document.createElement('li'); // Creazione dei list items
 
-    }
+        ex_four_listItemsUl.innerHTML = `${i + 1} -  ${ex_four_FibonacciArray[i]}`; // Inietto il contenuto ai list items
+
+        ex_four_UlFibonacci.appendChild(ex_four_listItemsUl); // Appendo i list items creati alla Ul html
+
+    };
 
 });
 
