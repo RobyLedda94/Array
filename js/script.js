@@ -502,9 +502,20 @@ ex_four_btnNum.addEventListener('click', function () {
 
     for (let i = 2; i < ex_four_inputFibonacci; i++) { // Determino con un ciclo for da dove inziare, e quante iterazioni dovranno essere svolte
 
-        console.log(i);
+        let ex_four_next_elem = ex_four_FibonacciArray[i - 1] + ex_four_FibonacciArray[i - 2]; // Variabile che fa la somma i primi due valori precedenti
+
+        ex_four_FibonacciArray.push(ex_four_next_elem); // Aggiungo in coda il nuovo elemento
 
     };
+
+    console.log(ex_four_FibonacciArray);
+
+
+    for (let i = 0; i < ex_four_FibonacciArray.length; i++) {
+
+        console.log(ex_four_FibonacciArray[i]);
+
+    }
 
 });
 
