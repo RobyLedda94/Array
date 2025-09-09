@@ -489,3 +489,24 @@ const ex_four_btnReset = document.getElementById('ex_four_btnReset'); // Bottone
 let ex_four_UlFibonacci = document.getElementById('ex_four_UlFibonacci'); // Ul Html
 
 let ex_four_msg = document.getElementById('ex_four_msg'); // Msg Html
+
+
+
+
+
+// Gestione evento btnNum
+
+ex_four_btnNum.addEventListener('click', function () {
+
+    let ex_four_inputFibonacci = parseInt(document.getElementById('ex_four_FibonacciInput').value, 10);
+
+    console.log(ex_four_inputFibonacci);
+
+});
+
+
+
+// Gestione evento btnReset
+ex_four_btnReset.addEventListener('click', function () {
+
+});
