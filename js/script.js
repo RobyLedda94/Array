@@ -515,11 +515,19 @@ ex_four_btnNum.addEventListener('click', function () {
 
         let ex_four_listItemsUl = document.createElement('li'); // Creazione dei list items
 
-        ex_four_listItemsUl.innerHTML = `${i + 1} -  ${ex_four_FibonacciArray[i]}`; // Inietto il contenuto ai list items
+        ex_four_listItemsUl.innerHTML = `${ex_four_FibonacciArray[i]}`; // Inietto il contenuto ai list items
 
         ex_four_UlFibonacci.appendChild(ex_four_listItemsUl); // Appendo i list items creati alla Ul html
 
+        ex_four_UlFibonacci.classList.add('list-style-none'); // Stile UL html
+
+        ex_four_listItemsUl.classList.add('p-1', 'bg-cadetblue', 'txt-white', 'border-white'); // Stile li html
+
     };
+
+    ex_four_msg.innerHTML = `Totale ripetizioni ${ex_four_FibonacciArray.length}`; // Contenuto al messaggio
+
+    ex_four_msg.classList.add('txt-green'); // Stile al messaggio
 
 });
 
